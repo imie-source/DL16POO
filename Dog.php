@@ -4,8 +4,7 @@ require_once("Mammal.php");
 class Dog extends Mammal{
 
     public function __construct($firstname ="Medor", $age=null){
-        $this->setFirstname($firstname);
-        $this->setAge($age);
+        parent::__construct($firstname, $age);
     }
 
     public function bark(){

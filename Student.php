@@ -6,9 +6,13 @@ class Student extends Mammal{
     private $lastname;
 
     public function __construct($firstname, $lastname, $age = null){
-        $this->setFirstname($firstname);
+        parent::__construct($firstname, $age); // calls parent constructor function
         $this->setLastname($lastname);
-        $this->setAge($age);
+    }
+
+    public function eat(){
+        echo $this->getFirstname() . " prend son couteau et sa fourchette pour manger.<br/>";
+        parent::eat();
     }
 
     public function getLastname(){

@@ -4,6 +4,15 @@ class Mammal{
     private $firstname;
     private $age;
 
+    public function __construct($firstname, $age = null){
+        $this->setFirstname($firstname);
+        $this->setAge($age);
+    }
+
+    public function eat(){
+        echo "Grumph Grumph...";
+    }
+
     protected function normalize($name){
         return ucfirst(strtolower($name));
     }
