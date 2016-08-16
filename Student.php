@@ -4,10 +4,17 @@ require_once("Mammal.php");
 class Student extends Mammal{
 
     private $lastname;
+    private static $nbStudent = 0;
+    const MAX_STUDENTS = 100;
 
     public function __construct($firstname, $lastname, $age = null){
         parent::__construct($firstname, $age); // calls parent constructor function
         $this->setLastname($lastname);
+        self::$nbStudent++;
+    }
+
+    public static function getNbStudent(){
+        return self::$nbStudent;
     }
 
     public function eat(){
