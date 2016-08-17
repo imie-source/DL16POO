@@ -1,6 +1,6 @@
 <?php
 
-class Mammal{    
+abstract class Mammal{    
     private $firstname;
     private $age;
 
