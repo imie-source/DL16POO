@@ -7,6 +7,10 @@ class Dog extends Mammal{
         parent::__construct($firstname, $age);
     }
 
+    public function yell(){
+        echo "AAAAAOUUUUUUUUUUUH!";
+    }
+
     public function bark(){
         echo "Bwouf <br/>";
     }

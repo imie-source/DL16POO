@@ -9,6 +9,13 @@ abstract class Mammal{
         $this->setAge($age);
     }
 
+    public abstract function yell();
+
+    public function bite(Mammal $m){
+        echo $this->getFirstname() . " mord " . $m->getFirstname() . "<br/>";
+        $m->yell();
+    }
+
     public function eat(){
         echo "Grumph Grumph...";
     }

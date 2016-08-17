@@ -2,17 +2,15 @@
 
 require_once("Student.php");
 require_once("Dog.php");
+require_once("Mammal.php");
+require_once("Boat.php");
 
-$student = new Student("John", "Snow", 33);
-$student2 = new Student("John", "Snow", 33);
-$dog = new Dog("Medor", 5);
+$student = new Student("John", "Snow");
+$boat = new Boat();
 
-$student->eat();
-$dog->eat();
+var_dump($boat);
 
-var_dump($student);
+$student->makeHorn($boat);
 
-echo Student::getNbStudent();
 
-echo "Nombre max d'étudiants : " . Student::MAX_STUDENTS;
 

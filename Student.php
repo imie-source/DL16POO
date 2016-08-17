@@ -1,5 +1,6 @@
 <?php
 require_once("Mammal.php");
+require_once("IVehicle.php");
 
 class Student extends Mammal{
 
@@ -11,6 +12,21 @@ class Student extends Mammal{
         parent::__construct($firstname, $age); // calls parent constructor function
         $this->setLastname($lastname);
         self::$nbStudent++;
+    }
+
+    public function makeTheShow(IVehicle $v){
+        $v->start();
+        $v->turn(-90);
+        $v->turn(180);
+        $v->horn();
+        $v->horn();
+        $v->horn();
+        $v->stop();
+    }
+
+
+    public function yell(){
+        echo "BWWWWOOAAAAAAAAAAA!";
     }
 
     public static function getNbStudent(){
