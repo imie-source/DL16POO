@@ -9,12 +9,28 @@ class Student extends Mammal{
     private static $nbStudent = 0;
     const MAX_STUDENTS = 100;
     private $dogs = [];
+    private $friends = [];
 
     public function __construct($firstname, $lastname, $age = null){
         parent::__construct($firstname, $age); // calls parent constructor function
         $this->setLastname($lastname);
         self::$nbStudent++;
     }
+
+    public function getFriends(){
+        return $this->friends;
+    }
+
+    public function addFriend(Student $friend){
+        if($friend !== $this){ // check if $friend is not me
+            $this->friends[] = $friend; // add this friend to my list
+        }
+        // check if my friend doesn't know me as a friend
+        if(array_search($this, $friend->getFriends(), true) === false){
+            $friend->addFriend($this); // add me as his friend
+        }
+    }
+
 
     public function getDogs(){
         return $this->dogs;
