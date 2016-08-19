@@ -2,15 +2,29 @@
 
 require_once("Student.php");
 require_once("Dog.php");
-require_once("Mammal.php");
-require_once("Boat.php");
 
-$student = new Student("John", "Snow");
-$boat = new Boat();
+$gab = new Student("Gabriel", "Block");
 
-var_dump($boat);
-
-$student->makeHorn($boat);
+$dog = new Dog("Medor");
+$dog2 = new Dog("Brutus");
+$dog3 = new Dog("Mabrook");
 
 
 
+$gab->addDog($dog);
+$gab->addDog($dog2);
+$gab->addDog($dog3);
+
+// var_dump($gab, $dog, $dog2, $dog3);
+
+// $gab->makeBark();
+
+$gab->getDogs()[2]->bark();
+
+// var_dump($gab);
+
+//$gab->getDog()->bark();
+
+//var_dump($dog);
+
+//$dog->biteMaster();
